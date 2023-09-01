@@ -1,0 +1,16 @@
+---
+- name: when condition
+  hosts: all
+  become: true
+  tasks:
+  vars:
+   a: 5
+  tasks:
+   - name: install tree
+     apt:
+      name: tree
+      state: present
+     when:
+      a==5
+...
+

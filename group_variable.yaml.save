@@ -1,0 +1,17 @@
+---
+- name: playbook to create users on group of servers from group variables
+  hosts: all
+  become: true
+  tasks:
+   - name: create users
+     user:
+      - name: "{{name1}}"
+        password: "{{password1}}"
+   - name: create user
+     user:
+      - name: "{{name2}}"
+        password: "{{password}}"
+   - name: create user
+     user:
+      - name: "{{name3}}"
+        password: "{{password3}}"

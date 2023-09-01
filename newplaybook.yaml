@@ -1,0 +1,10 @@
+---
+- name: playbook to install packages
+  hosts: 172.31.33.201
+  become: true
+  tasks:
+    - name: install packages
+      apt:
+       name: ["{{var1}}","{{var2}}","{{var3}}","{{var4}}","{{var5}}","{{var6}}"]
+       state: "{{st}}"
+...

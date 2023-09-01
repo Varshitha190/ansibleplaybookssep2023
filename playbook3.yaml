@@ -1,0 +1,16 @@
+---
+- name: to install packages
+  hosts: all
+  become: true
+  tasks:
+   - name: install packages
+     apt:
+      name: "{{item}}"
+      state: present
+      update_cache: yes
+     with_items:
+       - default-jdk
+       - tree
+       - elinks
+       - apache2
+...

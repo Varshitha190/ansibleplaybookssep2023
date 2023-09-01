@@ -1,0 +1,15 @@
+---
+- name: myvars
+  hosts: all
+  become: true
+  vars:
+   pkg1: git
+   pkg2: maven
+   pkg3: tree
+   stt: present
+  tasks:
+    - name: install packages
+      apt:
+       name: "{{pkg1}}"
+       state: "{{stt}}"
+...

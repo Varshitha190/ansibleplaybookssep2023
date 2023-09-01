@@ -1,0 +1,15 @@
+---
+- name: install packages
+  hosts: all
+  become: true
+  tasks:
+   - name: install and uninstall packages
+     apt:
+      name: "{{item.a}}"
+      state: "{{item.b}}"
+     with_items:
+       - {a: git, b: present}
+       - {a: tree, b: present}
+       - {a: maven, b: absent}
+       - {a: default-jdk, b: absent}
+...

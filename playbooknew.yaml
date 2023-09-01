@@ -1,0 +1,9 @@
+---
+- name: create a user
+  hosts: all
+  become: true
+  tasks:
+   - name: create a user
+     user:
+      name: varshitha
+      password: 123

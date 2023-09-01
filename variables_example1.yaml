@@ -1,0 +1,16 @@
+---
+- name: ansible playbbok to create a user.Interactive script
+  hosts: all
+  become: true
+  vars_prompt:
+   - name: username
+     prompt: desired username?
+     private: false
+   - name: password
+     prompt: desired password?
+  tasks:
+   - name: username
+     user:
+       name: "{{username}}"
+       password: "{{password}}"
+...

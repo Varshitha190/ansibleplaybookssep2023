@@ -1,0 +1,17 @@
+---
+- name: playbook to install packages and create a user
+  hosts: 171.31.36.58
+  become: true
+  tasks:
+    - name: install packages
+      apt:
+       name: ["{{a}}", "{{b}}"]
+       state: "{{d}}"
+    - name: create a user
+      user:
+       name: "{{c}}"
+       password: "{{h}}"
+       home: "{{e}}"
+       comment: "{{f}}"
+       shell: "{{g}}"
+...
